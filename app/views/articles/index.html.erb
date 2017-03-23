@@ -1,0 +1,10 @@
+<%= form_tag root_path, :method => 'Get', class: "padding" do %>
+   <%= text_field_tag :search, params[:search], data: { autocomplete: autocomplete_article_title_articles_path } %>
+   <%= submit_tag 'Search' %>
+<% end %>
+
+<ul>
+   <% @articles.each do |article| %>
+     <li><%= article.title  %></li>
+   <% end %>
+</ul>
